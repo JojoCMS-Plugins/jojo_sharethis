@@ -1,1 +1,2 @@
-Show digg, stumbleupon, technorati icons below articles using the ShareThis widget.
+Share to facebook, twitter, digg, stumbleupon, technorati etc  using the ShareThis widget.
+include {jojoHook hook="ShareThis"} in your page template where you want them to appear

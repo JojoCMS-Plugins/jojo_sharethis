@@ -1,5 +1,19 @@
-{if $code}
-<h3>Share this article</h3>
-<p class="note">Send links to this article to Digg, Twitter, Facebook, etc or via email</p> 
-<div id="sharethis">{$code}</div>
-{/if}
+<div id="sharethis">
+<a id="ck_email" class="stbar chicklet" href="javascript:void(0);"><img src="http://w.sharethis.com/chicklets/email.gif" /></a>
+<a id="ck_facebook" class="stbar chicklet" href="javascript:void(0);"><img src="http://w.sharethis.com/chicklets/facebook.gif" /></a>
+<a id="ck_twitter" class="stbar chicklet" href="javascript:void(0);"><img src="http://w.sharethis.com/chicklets/twitter.gif" /></a>
+<a id="ck_sharethis" class="stbar chicklet" href="javascript:void(0);"><img src="http://w.sharethis.com/chicklets/sharethis.gif" />ShareThis</a>
+<script type="text/javascript">
+    var shared_object = SHARETHIS.addEntry({ldelim}
+    title: document.title,
+    url: document.location.href
+{rdelim});
+
+shared_object.attachButton(document.getElementById("ck_sharethis"));
+shared_object.attachChicklet("email", document.getElementById("ck_email"));
+shared_object.attachChicklet("facebook", document.getElementById("ck_facebook"));
+shared_object.attachChicklet("twitter", document.getElementById("ck_twitter"));
+</script>
+<p class="note">Post this page to Facebook, Twitter, an email..</p> 
+</div>
+{* To remove unwanted buttons, simply remove the <a> tag and associated .attachChicklet() line. *}

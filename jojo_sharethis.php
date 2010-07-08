@@ -17,16 +17,20 @@
 
 class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
 {
-    public static function articleAfterBody()
+     public static function customhead()
+    {
+        if ($id = Jojo::getOption('sharethisid')) {
+            return '<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=' . $id . '&amp;type=website&amp;post_services=email%2Cfacebook%2Ctwitter%2Cgbuzz%2Cmyspace%2Cdigg%2Csms%2Cwindows_live%2Cdelicious%2Cstumbleupon%2Creddit%2Cgoogle_bmarks%2Clinkedin%2Cbebo%2Cybuzz%2Cblogger%2Cyahoo_bmarks%2Cmixx%2Ctechnorati%2Cfriendfeed%2Cpropeller%2Cwordpress%2Cnewsvine&amp;button=false"></script>';
+        }
+        return '';
+    }
+
+    public static function afterBody()
     {
         /* only show blog icons if the option is enabled */
         if (Jojo::getOption('enablesharethis') == 'no') return '';
-        
         global $smarty;
-        $smarty->assign('code', Jojo::getOption('sharethiscode'));
-
         $code = $smarty->fetch('jojo_sharethis.tpl');
-
         return $code;
     }
 }

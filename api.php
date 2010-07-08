@@ -16,12 +16,16 @@
  */
 
 /* adds the blog icons after the body of the article */
-Jojo::addHook('articleAfterBody', 'articleAfterBody', 'jojo_sharethis');
+Jojo::addHook('ShareThis', 'afterBody', 'jojo_sharethis');
 
-/* enable or disable blog icons */
+/* add javascript to head */
+Jojo::addHook('customhead', 'customhead', 'jojo_sharethis');
+
+
+/* enable or disable ShareThis */
 $_options[] = array(
     'id'          => 'enablesharethis',
-    'category'    => 'Articles',
+    'category'    => 'ShareThis',
     'label'       => 'Enable ShareThis',
     'description' => 'Enable / disable the display of the ShareThis button.',
     'type'        => 'radio',
@@ -30,13 +34,13 @@ $_options[] = array(
     'plugin'      => 'jojo_sharethis'
 );
 
-/* an option for listing your choice of blog icons */
+/* Your ShareThis publisher ID */
 $_options[] = array(
-    'id'          => 'sharethiscode',
-    'category'    => 'Articles',
-    'label'       => 'Button code',
-    'description' => 'ShareThis button code - sign up and get it from http://sharethis.com/publishers/getcode/',
-    'type'        => 'textarea',
+    'id'          => 'sharethisid',
+    'category'    => 'ShareThis',
+    'label'       => 'Publisher id code',
+    'description' => 'ShareThis publisher ID - sign up and get it from http://sharethis.com/publishers/getcode/ - the bit after publisher= in the head code',
+    'type'        => 'text',
     'default'     => '',
     'options'     => '',
     'plugin'      => 'jojo_sharethis'
