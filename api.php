@@ -18,10 +18,6 @@
 /* adds the blog icons after the body of the article */
 Jojo::addHook('ShareThis', 'afterBody', 'jojo_sharethis');
 
-/* add javascript to head */
-Jojo::addHook('customhead', 'customhead', 'jojo_sharethis');
-
-
 /* enable or disable ShareThis */
 $_options[] = array(
     'id'          => 'enablesharethis',
