@@ -22,6 +22,7 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
         /* only show blog icons if the option is enabled */
         if (Jojo::getOption('enablesharethis') == 'no') return '';
         global $smarty;
+        $smarty->assign('sharethisid', Jojo::getOption('sharethisid'));
         $code = $smarty->fetch('jojo_sharethis.tpl');
         return $code;
     }

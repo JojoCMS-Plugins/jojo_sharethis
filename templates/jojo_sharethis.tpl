@@ -3,7 +3,7 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">
 /*<![CDATA[*/
-stLight.options({ldelim}publisher:'{Jojo::getOption('sharethisid')}', tracking:'google'{rdelim});
+stLight.options({ldelim}publisher:'{$sharethisid}', tracking:'google'{rdelim});
 /*]]>*/
 </script>
 </div>
