@@ -18,26 +18,40 @@
 /* adds the blog icons after the body of the article */
 Jojo::addHook('ShareThis', 'afterBody', 'jojo_sharethis');
 
-/* enable or disable ShareThis */
+Jojo::addHook('foot', 'foot', 'jojo_sharethis');
+
+/* share type */
 $_options[] = array(
-    'id'          => 'enablesharethis',
-    'category'    => 'ShareThis',
-    'label'       => 'Enable ShareThis',
-    'description' => 'Enable / disable the display of the ShareThis button.',
+    'id'          => 'sharetype',
+    'category'    => 'Share',
+    'label'       => 'Share provider',
+    'description' => 'ShareThis or AddThis',
     'type'        => 'radio',
-    'default'     => 'yes',
-    'options'     => 'yes,no',
+    'default'     => 'sharethis',
+    'options'     => 'sharethis,addthis',
     'plugin'      => 'jojo_sharethis'
 );
 
 /* Your ShareThis publisher ID */
 $_options[] = array(
     'id'          => 'sharethisid',
-    'category'    => 'ShareThis',
+    'category'    => 'Share',
     'label'       => 'Publisher id code',
-    'description' => 'ShareThis publisher ID - sign up and get it from http://sharethis.com/publishers/getcode/ - the bit after publisher= in the head code',
+    'description' => 'Share/AddThis publisher ID (required for ShareThis and for AddThis analytics)',
     'type'        => 'text',
     'default'     => '',
     'options'     => '',
+    'plugin'      => 'jojo_sharethis'
+);
+
+/* share type */
+$_options[] = array(
+    'id'          => 'sharesize',
+    'category'    => 'Share',
+    'label'       => 'Share button size',
+    'description' => 'Small or large buttons',
+    'type'        => 'radio',
+    'default'     => 'small',
+    'options'     => 'small,large',
     'plugin'      => 'jojo_sharethis'
 );
