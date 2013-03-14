@@ -24,19 +24,25 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
         $smarty->assign('sharetype', Jojo::getOption('sharetype', 'sharethis'));
         $smarty->assign('sharethisid', Jojo::getOption('sharethisid'));
         $smarty->assign('sharesize', Jojo::getOption('sharesize', 'small'));
+        $favourites = Jojo::getOption('sharethis_favourites', '');
+        if ($favourites) {
+            $favourites = explode(',', $favourites);
+        }
+        $smarty->assign('sharethis_favourites', $favourites);
         $code = $smarty->fetch('jojo_sharethis.tpl');
         return $code;
     }
 
+     public static function head() {
+            return '';
+    }
+
      public static function foot() {
         if (Jojo::getOption('sharetype', 'sharethis')=='sharethis') {
-            return '<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-' . ( Jojo::getOption('sharethisid', '') ? '<script type="text/javascript">
-/*<![CDATA[*/
-stLight.options({publisher:\'' . Jojo::getOption('sharethisid') . '\', tracking:\'google\'});
-/*]]>*/
-</script>
-' : '');
+            return '<script type="text/javascript">var switchTo5x=false;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "' . Jojo::getOption('sharethisid') . '", tracking:"google", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+';
         } else {
             return '<script type="text/javascript">
 /*<![CDATA[*/

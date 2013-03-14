@@ -3,6 +3,6 @@
     clear: both;
 }
 
-#sharethis .st_sharethis {
-    margin-right: 10px;
+#sharethis > span  {
+    display: inline-block;
 }

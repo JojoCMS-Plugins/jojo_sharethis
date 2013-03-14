@@ -18,6 +18,8 @@
 /* adds the blog icons after the body of the article */
 Jojo::addHook('ShareThis', 'afterBody', 'jojo_sharethis');
 
+Jojo::addHook('customhead', 'head', 'jojo_sharethis');
+
 Jojo::addHook('foot', 'foot', 'jojo_sharethis');
 
 /* share type */
@@ -55,3 +57,16 @@ $_options[] = array(
     'options'     => 'small,large',
     'plugin'      => 'jojo_sharethis'
 );
+
+/* Your ShareThis favourites */
+$_options[] = array(
+    'id'          => 'sharethis_favourites',
+    'category'    => 'Share',
+    'label'       => 'ShareThis Favourites',
+    'description' => 'Comma separated list of the widgets you want included as buttons, from: facebook,fblike,twitter,linkedin,googleplus,plusone,pinterest,email (see ShareThis for others)',
+    'type'        => 'text',
+    'default'     => 'fblike,plusone,twitter,pinterest,email',
+    'options'     => '',
+    'plugin'      => 'jojo_sharethis'
+);
+
