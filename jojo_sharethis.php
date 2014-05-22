@@ -24,6 +24,7 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
         $smarty->assign('sharetype', Jojo::getOption('sharetype', 'sharethis'));
         $smarty->assign('sharethisid', Jojo::getOption('sharethisid'));
         $smarty->assign('sharesize', Jojo::getOption('sharesize', 'small'));
+        $smarty->assign('sharetitle', $content['title']);
         $favourites = Jojo::getOption('sharethis_favourites', '');
         if ($favourites) {
             $favourites = explode(',', $favourites);
@@ -43,7 +44,7 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "' . Jojo::getOption('sharethisid') . '", tracking:"google", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 ';
-        } else {
+        } elseif (Jojo::getOption('sharetype', 'sharethis')=='addthis') {
             return '<script type="text/javascript">
 /*<![CDATA[*/
  var addthis_config = {"data_track_clickback":true};
@@ -53,6 +54,7 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
  </script>
  ';
         }
+        return false;
 
     }
 }

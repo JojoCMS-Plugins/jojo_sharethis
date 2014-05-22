@@ -30,7 +30,7 @@ $_options[] = array(
     'description' => 'ShareThis or AddThis',
     'type'        => 'radio',
     'default'     => 'sharethis',
-    'options'     => 'sharethis,addthis',
+    'options'     => 'sharethis,addthis,none',
     'plugin'      => 'jojo_sharethis'
 );
 
