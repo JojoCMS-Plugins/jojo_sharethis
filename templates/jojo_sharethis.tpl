@@ -30,8 +30,8 @@
 </div>
 {elseif $sharethis_favourites}
 {foreach from=$sharethis_favourites item=f}{if $f=='facebook'}
-<a class='facebook' title='Facebook Like' href="https://www.facebook.com/dialog/feed?app_id={$OPTIONS.facebook_app_id}&amp;redirect_uri={urlencode($correcturl)}"><i class="fa fa-facebook"></i></a>{elseif $f=='twitter'}
-<a class='twitter' title='Tweet' href="https://twitter.com/intent/tweet?text={rawurlencode($title)}&amp;url={urlencode($correcturl)}"><i class="fa fa-twitter"></i></a>{elseif $f=='googleplus'}
+<a class='facebook' title='Facebook' href="https://www.facebook.com/sharer/sharer.php?u={urlencode($correcturl)}&ref=responsive"><i class="fa fa-facebook"></i></a>{elseif $f=='twitter'}
+<a class='twitter' title='Twitter' href="https://twitter.com/intent/tweet?text={rawurlencode($title)}&amp;url={urlencode($correcturl)}"><i class="fa fa-twitter"></i></a>{elseif $f=='googleplus'}
 <a class='googleplus' title='Google +' href="https://plus.google.com/share?url={urlencode($correcturl)}"><i class="fa fa-google-plus"></i></a>{elseif $f=='linkedin'}
 <a class='linkedin' title='LinkedIn' href="http://www.linkedin.com/shareArticle?mini=true&amp;url={urlencode($correcturl)}&amp;title={rawurlencode($title)}"><i class="fa fa-linkedin"></i></a>{elseif $f=='email'}
 <a class='email' title='Email' href="mailto:?subject={rawurlencode($title)}%20on%20{rawurlencode($sitetitle)}&amp;body={urlencode($correcturl)}"><i class="fa fa-envelope-o "></i></a>
