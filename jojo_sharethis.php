@@ -24,7 +24,6 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
         $smarty->assign('sharetype', Jojo::getOption('sharetype', 'sharethis'));
         $smarty->assign('sharethisid', Jojo::getOption('sharethisid'));
         $smarty->assign('sharesize', Jojo::getOption('sharesize', 'small'));
-        $smarty->assign('sharetitle', $content['title']);
         $favourites = Jojo::getOption('sharethis_favourites', '');
         if ($favourites) {
             $favourites = explode(',', $favourites);
