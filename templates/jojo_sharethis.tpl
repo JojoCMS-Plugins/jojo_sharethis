@@ -1,4 +1,4 @@
-<div id="sharethis"{if $sharesize=='large'}class="large"{/if}>
+<div id="sharethis"{if $sharesize=='large'} class="large"{/if}>
 {if $sharetype=='sharethis' && $sharethis_favourites}
 {foreach from=$sharethis_favourites item=f}{if $f=='facebook'}
 <span class='st_facebook{if $sharesize=='large'}_large{/if}' displayText='Facebook Like'></span>{elseif $f=='fblike'}
@@ -19,18 +19,11 @@
 <span class='st_pinterest{if $sharesize=='large'}_large{/if}' displayText='Pinterest'></span>
 <span class='st_email{if $sharesize=='large'}_large{/if}' displayText='Email'></span>
 <span class='st_sharethis{if $sharesize=='large'}_large{/if}' displayText='ShareThis'></span>
-{else if $sharetype=='addthis'}
-<div class="addthis_toolbox addthis_default_style{if $sharesize=='large'} addthis_32x32_style{/if}">
-<a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_2"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
-<a class="addthis_button_compact"></a>
-<a class="addthis_counter addthis_bubble_style"></a>
-</div>
+{elseif $sharetype=='addthis'}
+<div class="addthis_sharing_toolbox"></div>
 {elseif $sharethis_favourites}
 {foreach from=$sharethis_favourites item=f}{if $f=='facebook'}
-<a class='facebook' title='Facebook' href="https://www.facebook.com/sharer/sharer.php?u={urlencode($correcturl)}&ref=responsive"><i class="fa fa-facebook"></i></a>{elseif $f=='twitter'}
+<a class='facebook' title='Facebook' href="https://www.facebook.com/sharer/sharer.php?u={urlencode($correcturl)}&amp;ref=responsive"><i class="fa fa-facebook"></i></a>{elseif $f=='twitter'}
 <a class='twitter' title='Twitter' href="https://twitter.com/intent/tweet?text={rawurlencode($title)}&amp;url={urlencode($correcturl)}"><i class="fa fa-twitter"></i></a>{elseif $f=='googleplus'}
 <a class='googleplus' title='Google +' href="https://plus.google.com/share?url={urlencode($correcturl)}"><i class="fa fa-google-plus"></i></a>{elseif $f=='linkedin'}
 <a class='linkedin' title='LinkedIn' href="http://www.linkedin.com/shareArticle?mini=true&amp;url={urlencode($correcturl)}&amp;title={rawurlencode($title)}"><i class="fa fa-linkedin"></i></a>{elseif $f=='email'}
