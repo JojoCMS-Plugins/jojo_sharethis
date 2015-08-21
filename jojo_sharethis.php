@@ -43,7 +43,7 @@ class JOJO_Plugin_Jojo_sharethis extends JOJO_Plugin
 <script type="text/javascript">stLight.options({publisher: "' . Jojo::getOption('sharethisid') . '", tracking:"google", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 ';
         } elseif (Jojo::getOption('sharetype', 'sharethis')=='addthis') {
-            return '<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=' . Jojo::getOption('sharethisid') . '"  async="async"></script>
+            return '<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=' . Jojo::getOption('sharethisid') . '"  async="async"></script>
  ';
         }
         return false;
